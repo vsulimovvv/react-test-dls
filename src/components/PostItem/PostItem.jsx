@@ -27,7 +27,7 @@ const PostItem = ({ post }) => {
           <span className="post-item__tags">{post.tags}</span>
           <h3 className="post-item__title">{post.title}</h3>
           <div className="post-item__details">
-            <b className="post-item__detail">{post.author}</b>
+            <b className="post-item__detail">{post.autor}</b>
             <span className="post-item__detail">{post.date}</span>
             <span className="post-item__detail">{post.views} views</span>
           </div>
