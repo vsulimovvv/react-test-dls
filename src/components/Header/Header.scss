@@ -1,0 +1,128 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 3;
+  transition: 300ms ease;
+  will-change: height;
+
+  margin-bottom: 7rem;
+
+  @media screen and (max-width: 991px) {
+    margin-bottom: 0;
+  }
+
+  &__top {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid #e9e9e9;
+    position: relative;
+    z-index: 3;
+    background-color: #fff;
+
+    @media screen and (max-width: 991px) {
+      border-bottom: none;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 2rem 1fr 2rem;
+      position: relative;
+
+      @media screen and (max-width: 991px) {
+        grid-template-columns: 2.5rem auto 2.5rem;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+
+  &__bottom {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid #e9e9e9;
+    transition: 400ms ease;
+    position: relative;
+    z-index: 1;
+
+    position: absolute;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    top: 76px;
+
+    &.active {
+      transform: translateY(-100px);
+      height: 0;
+    }
+
+    @media screen and (max-width: 991px) {
+      display: none;
+    }
+  }
+
+  &__logo {
+    width: 18rem;
+    height: 2.7rem;
+    justify-self: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__search {
+    width: 2rem;
+    height: 2rem;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 90%;
+      height: 90%;
+      pointer-events: none;
+    }
+  }
+
+  &__toggle {
+    width: 2.5rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    @media screen and (max-width: 991px) {
+      display: flex;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: 300ms ease-in;
+
+  opacity: 0;
+  visibility: hidden;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}

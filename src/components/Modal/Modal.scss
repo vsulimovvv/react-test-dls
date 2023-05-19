@@ -1,0 +1,88 @@
+.modal {
+  position: fixed;
+
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 100;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+  }
+
+  &__wrapper {
+    width: calc(100% - 4rem);
+    max-width: 1000px;
+    background-color: #fafafa;
+    transition: 250ms ease-in;
+    position: relative;
+    overflow-y: auto;
+    max-height: calc(100% - 10rem);
+    border-radius: 1rem;
+    padding: 4rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  &__title {
+    font-weight: 700;
+    margin: 0 auto;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  &__text {
+    margin: 0 auto;
+    font-size: 1.5rem;
+    line-height: 1.32;
+    color: #9493a0;
+  }
+
+  &__close {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    right: 1rem;
+    top: 1rem;
+    fill: #777;
+    transition: 250ms ease;
+
+    &:hover {
+      fill: var(--color-black);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 50rem;
+    object-fit: cover;
+  }
+
+  &__title {
+    font-size: 3rem;
+  }
+
+  &__text {
+    font-size: 1.8rem;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
